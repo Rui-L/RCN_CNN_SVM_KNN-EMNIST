@@ -1,5 +1,6 @@
 # Comparison of RCN/CNN/SVM/KNN on EMNIST-letters dataset
 
+[Recursive Cortical Network](http://science.sciencemag.org/content/early/2017/10/26/science.aag2612.full) is a model developed by Vicarious.inc, and it is believed to be able to generalize from few examples. This small project is a study of the performance of 4 models under such extreme circumstance.
 
 ## Implementaions
 
@@ -16,3 +17,22 @@ Use [EMNIST](https://www.nist.gov/itl/iad/image-group/emnist-dataset) dataset fo
 
 
 You need to download dataset from EMNIST website to run the code. [This script](EMNIST/convert_mnist_to_bmp.py)(modified from https://github.com/Coopss/EMNIST) can be used to convert `emnist-letters.mat` to image files.
+
+
+Folders should be organized into the following structure, with each leaf node containing all the corresponding images for this label.
+
+```
+EMNIST
+├── testing
+│   ├── A
+│   ├── B
+│   ├── C
+│   ├── ...
+│   └── Z
+└── training
+    ├── A
+    ├── B
+    ├── C
+    ├── ...
+    └── Z
+```
