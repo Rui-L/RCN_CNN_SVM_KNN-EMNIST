@@ -44,7 +44,7 @@ import argparse
 
 def parse_cmd():
     parser = argparse.ArgumentParser(description='CNN for EMNIST')
-    parser.add_argument('--data_dir', type=str, default='EMNIST20')
+    parser.add_argument('--data_dir', type=str)
     parser.add_argument('--num_per_class_training', type=int, default=None)
     parser.add_argument('--num_per_class_testing', type=int, default=None)
     parser.add_argument('--batch_size', type=int, default=40)
@@ -83,7 +83,8 @@ class EMNIST(Dataset):
         return image, label
 
 
-# -- convnet, use the official pytorch example as reference
+# -- CNN, use the official pytorch example as reference,
+# to make sure we can get a reasonable result to compare with RCN
 # (https://github.com/pytorch/examples/blob/master/mnist/main.py)
 class Net(nn.Module):
     def __init__(self, num_cls):

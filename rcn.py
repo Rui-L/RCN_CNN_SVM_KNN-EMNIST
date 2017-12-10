@@ -1,4 +1,4 @@
-#! /usr/bin/env python2.7
+#! /usr/bin/env python2
 import argparse
 import numpy as np
 import os
@@ -32,7 +32,7 @@ def logging_config():
 # -- argparse
 def parse_cmd():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data_dir', type=str, default='EMNIST20')
+    parser.add_argument('--data_dir', type=str)
     parser.add_argument(
         '--num_per_class_training',
         type=int,
@@ -49,7 +49,8 @@ def parse_cmd():
     return args
 
 
-# -- rcn, use the rcn MNIST example code as reference
+# -- RCN, use the RCN MNIST example implementation, see (https://github.com/vicariousinc/science_rcn)
+# End-to-end implementation of RCN is beyond our scope for now, as explained in our report.
 def run(data_dir,
         num_per_class_training=None,
         num_per_class_testing=None,
