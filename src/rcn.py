@@ -15,7 +15,7 @@ np.random.seed(42)
 # -- logging
 import logging
 import logging.handlers
-LOG_LEVEL = logging.DEBUG
+LOG_LEVEL = logging.INFO
 
 def logging_config():
     root_logger = logging.getLogger()
@@ -100,7 +100,7 @@ def get_mnist_data_iters(data_dir, num_per_class_training, num_per_class_testing
             for fname in samples:
                 filepath = os.path.join(cat_path, fname)
                 # Resize and pad the images to (200, 200)
-                image_arr = imresize(imread(filepath), (112, 112))
+                image_arr = imresize(imread(filepath, "L"), (112, 112))
                 img = np.pad(image_arr,
                              pad_width=tuple([(p, p) for p in (44, 44)]),
                              mode='constant', constant_values=0)

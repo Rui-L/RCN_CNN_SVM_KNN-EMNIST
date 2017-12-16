@@ -24,7 +24,7 @@ from PIL import Image
 # -- logging
 import logging
 import logging.handlers
-LOG_LEVEL = logging.DEBUG
+LOG_LEVEL = logging.INFO
 
 def logging_config():
     root_logger = logging.getLogger()
@@ -74,7 +74,7 @@ class EMNIST(Dataset):
 
     def __getitem__(self, idx):
         img_name = os.path.join(self.root_dir, *self.paths[idx])
-        image = Image.open(img_name)
+        image = Image.open(img_name).convert(mode="L")
         label = self.cls_list.index(self.paths[idx][0])
 
         if self.transform:
@@ -184,4 +184,6 @@ if __name__ == "__main__":
         if e % 5 == 0:
             loss, acc = test(model, test_loader)
             logger.info("test loss: %s, test accuracy: %s", loss, acc)
+    loss, acc = test(model, test_loader)
+    logger.info("test loss: %s, test accuracy: %s", loss, acc)
 
