@@ -1,5 +1,7 @@
 clear all
 close all
+
+% Huajing Zhao, University of Michigan, 12/04/2017
 %%
 load emnist-letters.mat
 
@@ -8,11 +10,11 @@ train_label = dataset.train.labels;
 % train = zeros(size(train_img,1), size(train_img,2) + 1);
 train = [train_label, train_img];
 
-% train = train(1:1300,:);
-% hist(train_label(1:1300),26)
+% train = train(1:520,:);
+% hist(train_label(1:520),26)
 % title('labels for training datas')
 
-train = train(1:520,:); % train size, roughly equivalent to using selectTrain_20
+train = train(1:1300,:); % train size, roughly equivalent to using selectTrain_50
 
 
 test_img = double(dataset.test.images);

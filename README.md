@@ -6,8 +6,8 @@
 
 * RCN: use reference implementation of [Recursive Cortical Network](https://github.com/vicariousinc/science_rcn)
 * CNN: use [pytorch official example](https://github.com/pytorch/examples/tree/master/mnist) as reference architecture
-* SVM
-* KNN
+* SVM: use [Digit Classification Using HOG Features] (https://www.mathworks.com/help/vision/examples/digit-classification-using-hog-features.html) as reference architecture
+* KNN: use L1 distance to implement.
 
 ## Dataset
 

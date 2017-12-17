@@ -24,21 +24,12 @@
  
 
 %%
+% Added by Huajing:
 % You need to put your own folders of test and training dataset of images
 % under current folder. Here we used images abstracted from EMNIST dataset 
 % using select_train.m. Each sub-folders for train/test named A-Z
 trainingSet = imageDatastore('./selectTrain_10', 'IncludeSubfolders', true, 'LabelSource', 'foldernames');
 testSet = imageDatastore('./selectTest_50', 'IncludeSubfolders', true, 'LabelSource', 'foldernames');
-
-%%
-% Use |countEachLabel| to tabulate the number of images associated with
-% each label. In this example, the training set consists of 101 images for
-% each of the 10 digits. The test set consists of 12 images per digit.
-
-% countEachLabel(trainingSet)
-
-%%
-% countEachLabel(testSet)
 
 %%
 % Show a few of the training and test images
@@ -186,6 +177,7 @@ classifier = fitcecoc(trainingFeatures, trainingLabels);
 % Make class predictions using the test features.
 predictedLabels = predict(classifier, testFeatures);
 
+% Edited by Huajing Zhao
 % Tabulate the results using a confusion matrix.
 confMat = confusionmat(testLabels, predictedLabels);
 
@@ -196,9 +188,7 @@ total_accuracy = trace(confMat)/(50*26)
 %%
 % The table shows the confusion matrix in percentage form. The columns of
 % the matrix represent the predicted labels, while the rows represent the
-% known labels. For this test set, digit 0 is often misclassified as 6,
-% most likely due to their similar shapes. Similar errors are seen for 9
-% and 3. Training with a more representative data set like MNIST [2] or
+% known labels. Training with a more representative data set like MNIST [2] or
 % SVHN [3], which contain thousands of handwritten characters, is likely to
 % produce a better classifier compared with the one created using this
 % synthetic data set.
