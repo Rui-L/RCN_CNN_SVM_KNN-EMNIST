@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+# coding: utf-8
+
+""" Convert MNIST .mat file to bmp images. """
+__author__ = "Rui Lin"
+__email__ = "rxxlin@umich.edu"
+
 
 from __future__ import print_function
 from os import path
@@ -10,6 +16,7 @@ import numpy as np
 import pickle
 
 
+## This part is borrowed from https://github.com/Coopss/EMNIST
 def load_data(mat_file_path, width=28, height=28, max_=None, verbose=True):
     ''' Load data in from .mat file as specified by the paper.
 

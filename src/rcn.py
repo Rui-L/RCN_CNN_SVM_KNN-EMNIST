@@ -1,4 +1,10 @@
 #! /usr/bin/env python2
+# coding: utf-8
+
+""" RCN on EMNIST-letters dataset. """
+__author__ = "Rui Lin"
+__email__ = "rxxlin@umich.edu"
+
 import argparse
 import numpy as np
 import os

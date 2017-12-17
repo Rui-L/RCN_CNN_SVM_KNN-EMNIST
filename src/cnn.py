@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 # coding: utf-8
 
+""" CNN on EMNIST-letters dataset. """
+__author__ = "Rui Lin"
+__email__ = "rxxlin@umich.edu"
+
+
 ################ initialization ###############
 import os
 
